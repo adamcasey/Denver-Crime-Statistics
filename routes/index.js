@@ -18,11 +18,11 @@ const saltRounds = 10;
 router.get('/', function(req, res, next) {
 	console.log(req.user);
 	console.log(req.isAuthenticated());
-  res.render('home', { title: 'aMAZEing Games Home Page' });
+  res.render('home', { title: 'Denver Open Source Crime Statistics' });
 });
 
 router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'aMAZEing Games Registration' });
+  res.render('register', { title: 'Denver Open Source Crime Registration' });
 });
 
 /* 
@@ -32,7 +32,7 @@ authenticationMiddleware() tests for use login authentication and restricts the 
 */
 router.get('/profile', authenticationMiddleware(), function (req, res) {
 	//render a profile page
-	res.render('profile', { title: 'aMAZEing Games Profile Page' });
+	res.render('profile', { title: 'Denver Open Source Crime Profile' });
 });
 
 /*
@@ -40,7 +40,7 @@ GET Login Page
 When the user gets a url called 'login'
 */
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'aMAZEing Games User Login' });
+  res.render('login', { title: 'Denver Open Source Crime Login' });
 });
 
 /*
@@ -67,18 +67,19 @@ router.get('/logout', function(req, res) {
   //res.render('home', { title: 'Log Out of aMAZEing Games' });
 });
 
-/* GET Game Page 1 */
-/*
-GET Games Page
-Going to try and copy the same post action when someone has logged in
-*/
-router.get('/sdtm', authenticationMiddleware(), function (req, res) {
-	//render the games page --> at least I could figure out that a pathway works
-	res.render('profile', { title: 'Meh Games Profile Page' });
-	// res.render('Justin_p5/MyProjects/Snake_Game/indexCopy', { title: 'Welcome to the aMAZEing Games Page' });
-});
 
-/* GET Game Page 2 */
+/*
+
+GET HeyJackAss page
+Going to try and copy the same post action when someone has logged in
+the authenticationMiddleware() is what makes sure the person is logged in
+*/
+
+router.get('/heyjackass', authenticationMiddleware(), function (req, res) {
+	//render the games page
+	res.render('heyjackass', { title: 'Hey JackAss' });
+
+});
 
 
 /*
