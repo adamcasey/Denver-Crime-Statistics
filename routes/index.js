@@ -35,6 +35,11 @@ router.get('/profile', authenticationMiddleware(), function (req, res) {
 	res.render('profile', { title: 'Denver Open Source Crime Profile' });
 });
 
+router.get('/map', authenticationMiddleware(), function (req, res) {
+	//render a profile page
+	res.render('map', { title: 'Denver Neighborhood Map' });
+});
+
 /*
 GET Login Page
 When the user gets a url called 'login'
