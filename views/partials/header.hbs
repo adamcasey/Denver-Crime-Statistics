@@ -33,6 +33,7 @@
           <li class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>
           </li>
+
           <!-- If user is NOT logged in, render anything between the else and /if tags -->
           {{else}}
           <li class="nav-item">
@@ -45,7 +46,11 @@
           {{/if}}
 
           <li class="nav-item">
-              <a class="nav-link" href="/heyjackass">Crime Map</a>
+              <a class="nav-link" href="/heyjackass">Crime Statistics</a>
+          </li>
+                <!--Render the maps page if the user has logged in -->
+          <li class="nav-item">
+              <a class="nav-link" href="/map">Map</a>
           </li>
       </ul>
   </nav>
